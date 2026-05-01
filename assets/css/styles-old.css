@@ -1,0 +1,531 @@
+/* ================================
+   Base / Theme
+================================ */
+
+:root {
+    --ta-yellow: #E3D94C;
+    --ta-orange: #F2A640;
+    --ta-red: #C51D2D;
+    --ta-black: #000000;
+    --ta-dark: #1A1410;
+    --ta-brown: #231A14;
+}
+
+body {
+    background-color: var(--ta-dark);
+    color: #f1f1f1;
+    font-family: Arial, sans-serif;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+}
+
+a {
+    text-decoration: none;
+    color: var(--ta-orange);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--ta-yellow);
+}
+
+h1, h2, h3 {
+    color: var(--ta-yellow);
+}
+
+.btn-primary {
+    background-color: var(--ta-red);
+    border-color: var(--ta-red);
+}
+
+.btn-primary:hover {
+    background-color: #a81826;
+    border-color: #a81826;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--ta-orange);
+    border-color: var(--ta-orange);
+    color: #000;
+}
+
+
+/* ================================
+   Header / Navbar
+================================ */
+
+.site-header {
+    z-index: 1050;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+
+/* ================================
+   Notice Banner
+================================ */
+
+.site-notice {
+    padding: 12px 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.site-notice-info {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.site-notice-warning {
+    background: #ffc107;
+    color: #111;
+}
+
+.site-notice-closed {
+    background: #dc3545;
+    color: #fff;
+}
+
+
+/* ================================
+   Shared Sections
+================================ */
+
+.hero-section,
+.page-hero {
+    background: linear-gradient(180deg, #151515 0%, #0f0f0f 100%);
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.hero-kicker {
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.page-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.section-heading p,
+.lead {
+    color: #ccc;
+}
+
+
+/* ================================
+   Cards
+================================ */
+
+.featured-stop-card,
+.info-card,
+.schedule-card,
+.faq-card,
+.current-schedule-card,
+.ride-card {
+    background: #1b1b1b;
+    border-radius: 14px;
+    height: 100%;
+}
+
+.featured-stop-card,
+.info-card,
+.schedule-card,
+.faq-card,
+.current-schedule-card {
+    padding: 20px;
+}
+
+.featured-stop-card,
+.ride-card {
+    box-shadow: 0 0 15px rgba(0,0,0,0.35);
+}
+
+.info-card,
+.featured-stop-card,
+.schedule-card,
+.ride-card {
+    border-top: 3px solid var(--ta-orange);
+    background: var(--ta-brown);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+.current-schedule-card {
+    border: 2px solid #ffc107;
+}
+
+.stop-status,
+.schedule-date,
+.ride-type {
+    color: #ffc107;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.stop-status,
+.ride-type {
+    font-size: 1.85rem;
+}
+
+.venue,
+.hero-subtitle,
+.schedule-row .venue,
+.featured-stop-card .venue,
+.current-schedule-card .venue {
+    color: #ccc;
+}
+
+.dates {
+    font-weight: 700;
+}
+
+.featured-stop-card {
+    backdrop-filter: blur(6px);
+    background: rgba(27, 27, 27, 0.9);
+}
+
+/* ================================
+   Schedule Page
+================================ */
+
+.schedule-row-active {
+    border-left-color: var(--ta-yellow);
+    background: rgba(227, 217, 76, 0.08);
+}
+
+.schedule-badge-active {
+    background: var(--ta-yellow);
+    color: #000;
+}
+
+.schedule-badge-upcoming {
+    background: var(--ta-orange);
+    color: #000;
+}
+
+.schedule-list {
+    display: grid;
+    gap: 12px;
+}
+
+.schedule-row {
+    background: #1b1b1b;
+    border-radius: 12px;
+    padding: 18px;
+    border-left: 5px solid #333;
+}
+
+.schedule-row-active {
+    border-left-color: #ffc107;
+    background: #211c10;
+}
+
+.schedule-row-past {
+    opacity: 0.55;
+}
+
+.schedule-row h3 {
+    font-size: 1.25rem;
+}
+
+.schedule-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.schedule-badge-active {
+    background: #ffc107;
+    color: #111;
+}
+
+.schedule-badge-upcoming {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.schedule-badge-past {
+    background: #444;
+    color: #ccc;
+}
+
+
+/* ================================
+   Rides Page
+================================ */
+
+.ride-card {
+    background: #1b1b1b;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ride-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+}
+
+.ride-image-wrap {
+    background: #2a2a2a;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.ride-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.ride-card:hover .ride-image {
+    transform: scale(1.05);
+}
+
+.ride-card-body {
+    padding: 18px;
+}
+
+.ride-type {
+    color: #ffc107;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ride-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+/* ================================
+   Placeholder Image
+================================ */
+
+.placeholder-image {
+    background: #2a2a2a;
+    height: 220px;
+    color: #aaa;
+    border-radius: 12px;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+.site-footer {
+    background: #140F0C;
+    color: #aaa;
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+
+/* ================================
+   Mobile Action Bar
+================================ */
+
+.mobile-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+
+    display: flex;
+    gap: 6px;
+
+    padding: 8px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+
+    background: #000;
+    border-top: 1px solid #333;
+}
+
+.mobile-actions .btn {
+    font-size: 0.9rem;
+    padding: 10px 6px;
+}
+
+
+/* ================================
+   Responsive Tweaks
+================================ */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .schedule-row {
+        padding: 15px;
+    }
+
+    .schedule-date {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        height: 32px;
+    }
+
+    .navbar-brand span {
+        font-size: 0.95rem;
+    }
+}
+
+/* ================================
+   Hero Background Image
+================================ */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/assets/images/NightShotInGander.jpg') center center / cover no-repeat;
+    z-index: 1;
+
+    transform: scale(1.05);
+    animation: heroSlowZoom 18s ease-in-out infinite alternate;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2;
+}
+
+.hero-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(197,29,45,0.3), transparent);
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 3;
+}
+
+@keyframes heroSlowZoom {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+/* Improve text contrast */
+.hero-title,
+.hero-subtitle,
+.hero-kicker {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+    }
+
+    .hero-bg {
+        animation: none;
+        transform: scale(1.03);
+    }
+}
+
+.payment-logo-lg {
+    height: 28px;
+}
+
+.masked-password {
+    -webkit-text-security: disc;
+    text-security: disc;
+}
+
+.about-card {
+    background: #1b1b1b;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.site-footer .small a {
+    color: #ccc;
+}
+.site-footer .small a:hover {
+    color: #fff;
+}
+
+/* ================================
+   Upcoming Stop Cards
+================================ */
+
+.schedule-card {
+    text-align: center;
+    padding: 22px;
+}
+
+.schedule-location, .featured-stop-card .location {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.schedule-card .venue, .featured-stop-card .venue {
+    font-size: 1.25rem;
+    color: #ccc;
+}
+
+.schedule-card .dates, .featured-stop-card .dates {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffc107;
+}
+
+/* Slight bump on larger screens */
+@media (min-width: 992px) {
+    .schedule-location, .featured-stop-card .location {
+        font-size: 2rem;
+    }
+
+    .schedule-card .dates, .featured-stop-card .dates {
+        font-size: 1.5rem;
+    }
+}

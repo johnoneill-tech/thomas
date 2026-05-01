@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-lg-5">
-                    <div class="featured-stop-card">
+                    <div class="featured-stop-card text-center p-4 h-100 d-flex flex-column justify-content-center">
 
                         <?php if (!empty($featured_stop)): ?>
 
@@ -29,7 +29,7 @@
                                 <?= $is_current ? 'Now In' : 'Next Stop' ?>
                             </div>
 
-                            <h2><?= htmlspecialchars($featured_stop['location']) ?></h2>
+                            <h2 class="location"><?= htmlspecialchars($featured_stop['location']) ?></h2>
 
                             <p class="venue">
                                 <?= htmlspecialchars($featured_stop['venue']) ?>
@@ -91,7 +91,7 @@
 
                 <!-- Hours -->
                 <div class="col-md-4">
-                    <div class="info-card h-100">
+                    <div class="info-card h-100 text-center d-flex flex-column">
                         <h3 class="mb-3">Hours</h3>
 
                         <?php if (!empty($global_info['hours'])): ?>
@@ -108,7 +108,7 @@
 
                 <!-- Pricing -->
                 <div class="col-md-4">
-                    <div class="info-card h-100">
+                    <div class="info-card h-100 text-center d-flex flex-column">
                         <h3 class="mb-3">Pricing</h3>
 
                         <?php if (!empty($global_info['pricing'])): ?>
@@ -122,7 +122,7 @@
                         <?php endif; ?>
 
                         <?php if (!empty($global_info['payments'])): ?>
-                        <div class="d-flex align-items-center gap-2 mt-4">
+                        <div class="d-flex align-items-center text-center w-100 gap-2 mt-4 justify-content-center">
                             <img src="assets/images/Square_Logo_2025_White.svg"
                                 alt="Square accepted"
                                 class="payment-logo-lg">
@@ -137,7 +137,7 @@
 
                 <!-- Updates -->
                 <div class="col-md-4">
-                    <div class="info-card h-100">
+                    <div class="info-card h-100 text-center d-flex flex-column">
                         <h3 class="mb-3">Updates</h3>
 
                         <p class="mb-2">
@@ -224,7 +224,7 @@
 
     <section class="rides-preview py-5">
         <div class="container">
-            <div class="row align-items-center g-4">
+            <div class="row align-items-center g-4 text-center">
 
                 <div class="col-lg-6">
                     <h2>Rides, Games &amp; Family Fun</h2>

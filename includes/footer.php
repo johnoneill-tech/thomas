@@ -2,7 +2,7 @@
     <div class="container text-center">
 
         <p class="mb-1">
-            &copy; <?= date('Y') ?> <?= htmlspecialchars($site_name ?? 'Thomas Amusements') ?>
+            &copy; <?= date('Y') ?> <?= htmlspecialchars($site_name ?? 'Thomas Amusements') ?>, Inc.
         </p>
 
         <?php if (!empty($global_info['phone'])): ?>

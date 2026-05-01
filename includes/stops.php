@@ -27,7 +27,7 @@ $stops = [
     ],
     [
         'location' => 'Paradise',
-        'venue' => 'Community Centre',
+        'venue' => 'Double Ice Complex',
         'start_date' => '2026-07-01',
         'end_date' => '2026-07-05',
     ],
@@ -51,7 +51,7 @@ $stops = [
     ],
     [
         'location' => 'Gander',
-        'venue' => 'Community Centre',
+        'venue' => 'Steele Community Centre',
         'start_date' => '2026-07-29',
         'end_date' => '2026-08-03',
     ],
