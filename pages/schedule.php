@@ -18,7 +18,7 @@
 
                         <div class="col-lg-8 text-center text-lg-start">
                             <div class="stop-status mb-1">
-                                <?= $is_current ? 'Now Open In' : 'Next Stop' ?>
+                                <?= !empty($is_current) ? 'Now In' : (ISSET($today, $season_start) && $today < $season_start ? 'First Stop' : 'Next Stop') ?>
                             </div>
 
                             <h2 class="mb-1">
@@ -63,9 +63,17 @@
 
             <div class="d-grid gap-3">
 
+<?php            $stops = $stops ?? [];
+                $today = $today ?? date('Y-m-d'); ?>
+
                 <?php foreach ($stops as $stop): ?>
                     <?php
                     $is_past = $stop['end_date'] < $today;
+
+                    if ($is_past) {
+                        continue;
+                    }
+
                     $is_active = $today >= $stop['start_date'] && $today <= $stop['end_date'];
                     $is_upcoming = $stop['start_date'] > $today;
 
@@ -73,13 +81,14 @@
 
                     if ($is_active) {
                         $row_classes .= ' schedule-row-active';
-                    } elseif ($is_past) {
-                        $row_classes .= ' schedule-row-past';
                     }
                     ?>
 
                     <article class="<?= htmlspecialchars($row_classes) ?>">
                         <div class="row align-items-center g-3 text-center text-lg-start">
+                    <?php if (ISSET($stop['change']) && $stop['change'] == 1): ?>
+                    <div class="col-12 w-100 text-center"><span class="fw-bold h4 w-100 text-center">** Schedule Change **</span></div>
+                    <?php endif; ?>
 
                             <div class="col-lg-3">
                                 <div class="schedule-date">

@@ -66,6 +66,26 @@ if (
     $notice['active'] = false;
 }
 
+$season_start = $stops[0]['start_date'] ?? '2026-06-04';
+
+if (!$notice['active']) {
+    if (!empty($current_stop)) {
+        $notice = [
+            'active' => true,
+            'type' => 'info',
+            'message' => 'Now open in ' . $current_stop['location'] . ' at ' . $current_stop['venue'] . '!',
+            'updated' => '',
+        ];
+    } elseif ($today < $season_start) {
+        $notice = [
+            'active' => true,
+            'type' => 'info',
+            'message' => "EXCITED TO GET GOING FOR THE 2026 SEASON ON " . date('F j', strtotime($season_start)) . "!",
+            'updated' => '',
+        ];
+    }
+}
+
 require_once __DIR__ . '/includes/header.php';
 require_once __DIR__ . '/pages/' . $allowed_pages[$page];
 require_once __DIR__ . '/includes/footer.php';

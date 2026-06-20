@@ -2,14 +2,49 @@
 
 $rides = [
     [
-        'name' => 'Cliffhanger',
-        'image' => 'Cliffhanger-150.jpeg',
-        'type' => 'Thrill Ride',
-    ],
-    [
         'name' => 'Tilt A Whirl',
         'image' => 'TiltAWhirl-150.jpg',
         'type' => 'Family Ride',
+    ],
+    [
+        'name' => 'Scrambler',
+        'image' => 'Scrambler-280.jpg',
+        'type' => 'Family Ride',
+    ],
+    [
+        'name' => 'Tip Top',
+        'image' => 'TipTop-280.jpg',
+        'type' => 'Family Ride',
+    ],
+    [
+        'name' => 'Carousel',
+        'image' => 'Carousel-280.jpg',
+        'type' => 'Family Ride',
+    ],
+    [
+        'name' => 'Berry Go Round',
+        'image' => 'BerryGoRound-280.jpg',
+        'type' => 'Kiddie / Family Ride',
+    ],
+    [
+        'name' => 'Fun Slide',
+        'image' => 'FunSlide-560.jpg',
+        'type' => 'Kiddie Ride',
+    ],
+    [
+        'name' => 'Go Gator',
+        'image' => 'GoGator-560.jpg',
+        'type' => 'Kiddie Ride',
+    ],
+    [
+        'name' => 'Kiddie Cars',
+        'image' => 'KiddieCars-280.jpg',
+        'type' => 'Kiddie Ride',
+    ],
+    [
+        'name' => 'Cliffhanger',
+        'image' => 'Cliffhanger-150.jpeg',
+        'type' => 'Thrill Ride',
     ],
     [
         'name' => 'Tornado',
@@ -27,39 +62,9 @@ $rides = [
         'type' => 'Thrill Ride',
     ],
     [
-        'name' => 'Berry Go Round',
-        'image' => 'BerryGoRound-280.jpg',
-        'type' => 'Kiddie / Family Ride',
-    ],
-    [
-        'name' => 'Scrambler',
-        'image' => 'Scrambler-280.jpg',
-        'type' => 'Family Ride',
-    ],
-    [
-        'name' => 'Tip Top',
-        'image' => 'TipTop-280.jpg',
-        'type' => 'Family Ride',
-    ],
-    [
         'name' => 'Starship 3000',
         'image' => 'Starship3000-280.jpg',
         'type' => 'Thrill Ride',
-    ],
-    [
-        'name' => 'Fun Slide',
-        'image' => 'FunSlide-280.jpg',
-        'type' => 'Kiddie Ride',
-    ],
-    [
-        'name' => 'Carousel',
-        'image' => 'Carousel-280.jpg',
-        'type' => 'Family Ride',
-    ],
-    [
-        'name' => 'Kiddie Cars',
-        'image' => 'KiddieCars-280.jpg',
-        'type' => 'Kiddie Ride',
     ],
 ];
 
@@ -68,11 +73,6 @@ $games = [
         'name' => 'Candyland',
         'image' => 'Candyland-560.jpg',
         'type' => 'Food & Beverage',
-    ],
-    [
-        'name' => 'Derby Race',
-        'image' => 'DerbyRaceGame-280.jpg',
-        'type' => 'Game',
     ],
     [
         'name' => 'Frog Bog',
@@ -93,24 +93,17 @@ $games = [
 ?>
 
 <main>
-    <section class="page-hero py-1">
+    <section class="page-hero py-5">
         <div class="container text-center">
             <h1>Rides &amp; Attractions</h1>
-            <!-- <p class="lead">
-                Classic midway rides, family attractions, games, and entertainment across Newfoundland and Labrador.
-            </p> -->
-                <p>Ride availability may vary by location.</p>
+                <p class="lead">Ride availability may vary by location.</p>
         </div>
     </section>
 
     <section class="rides-page py-1">
         <div class="container">
 
-            <!-- <div class="section-heading text-center mb-4">
-                <h2>Midway Rides</h2>
-            </div> -->
-
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
 
                 <?php foreach ($rides as $ride): ?>
                     <?php $image_path = 'assets/images/' . $ride['image']; ?>
@@ -150,7 +143,7 @@ $games = [
                 <h2>Games &amp; Guest Services</h2>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
 
                 <?php foreach ($games as $game): ?>
                     <?php $image_path = 'assets/images/' . $game['image']; ?>

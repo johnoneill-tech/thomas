@@ -6,27 +6,28 @@
     <div class="hero-overlay"></div>
 
     <div class="container position-relative py-5">
-        <div class="row align-items-center g-4">
+        <div class="row align-items-start g-4">
 
-            <div class="col-lg-7 text-center text-lg-start">
-                    <p class="hero-kicker">Bring on Some Fun in the Sun!</p>
+              <div class="col-lg-7 text-center text-lg-start">
+                  <div class="hero-copy">
+                      <p class="hero-kicker">Newfoundland &amp; Labrador's travelling midway</p>
 
-                    <h1 class="hero-title">
-                        <?= htmlspecialchars($site_name ?? 'Thomas Amusements') ?>
-                    </h1>
+                      <h1 class="hero-title">
+                          <?= htmlspecialchars($site_name ?? 'Thomas Amusements') ?>
+                      </h1>
 
-                    <p class="hero-subtitle">
-                        With over 15 thrill seeking rides for all ages, we offer attractions for the young and old.
-                    </p>
-                </div>
-
+                      <p class="hero-subtitle mb-0">
+                          Family rides, games, food, and entertainment across the province.
+                      </p>
+                  </div>
+              </div>
                 <div class="col-lg-5">
                     <div class="featured-stop-card text-center p-4 h-100 d-flex flex-column justify-content-center">
 
                         <?php if (!empty($featured_stop)): ?>
 
                             <div class="stop-status">
-                                <?= $is_current ? 'Now In' : 'Next Stop' ?>
+                                <?= !empty($is_current) ? 'Now In' : (ISSET($today, $season_start) && $today < $season_start ? 'First Stop' : 'Next Stop') ?>
                             </div>
 
                             <h2 class="location"><?= htmlspecialchars($featured_stop['location']) ?></h2>
@@ -87,7 +88,7 @@
 
     <section class="quick-info-section py-5">
         <div class="container">
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
 
                 <!-- Hours -->
                 <div class="col-md-4">
@@ -97,7 +98,7 @@
                         <?php if (!empty($global_info['hours'])): ?>
                             <ul class="list-unstyled mb-0">
                                 <?php foreach ($global_info['hours'] as $line): ?>
-                                    <li class="mb-1"><?= htmlspecialchars($line) ?></li>
+                                    <li class="mb-1"><?= $line ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         <?php else: ?>
@@ -114,7 +115,7 @@
                         <?php if (!empty($global_info['pricing'])): ?>
                             <ul class="list-unstyled mb-2">
                                 <?php foreach ($global_info['pricing'] as $line): ?>
-                                    <li class="mb-1"><?= htmlspecialchars($line) ?></li>
+                                    <li class="mb-1"><?= $line ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         <?php else: ?>
@@ -123,7 +124,7 @@
 
                         <?php if (!empty($global_info['payments'])): ?>
                         <div class="d-flex align-items-center text-center w-100 gap-2 mt-4 justify-content-center">
-                            <img src="assets/images/Square_Logo_2025_White.svg"
+                            <img src="assets/images/Square_Logo_2025_Black.svg"
                                 alt="Square accepted"
                                 class="payment-logo-lg">
 
@@ -145,12 +146,31 @@
                         </p>
 
                         <?php if (!empty($global_info['facebook_url'])): ?>
-                            <a href="<?= htmlspecialchars($global_info['facebook_url']) ?>"
-                            target="_blank"
-                            class="btn btn-outline-light btn-sm">
-                                Follow on Facebook
-                            </a>
+                            <p class="mb-0">
+                                <a href="<?= htmlspecialchars($global_info['facebook_url']) ?>"
+                                target="_blank"
+                                class="d-inline-flex align-items-center gap-2">
+
+                                    <span>Follow on</span>
+
+                                    <img src="assets/images/Facebook_Logo_Primary.png"
+                                        alt="Facebook"
+                                        style="height: 24px; width: auto;">
+                                </a>
+                            </p>
                         <?php endif; ?>
+                    </div>
+                </div>
+
+                <!-- Concessions -->
+                <div class="col-md-4">
+                    <div class="info-card h-100 text-center d-flex flex-column">
+                        <h3 class="mb-3">Concessions</h3>
+
+                        <p class="mb-2">
+                            All concessions must be purchased using <span class="fw-bold text-success">COUPONS</span>.<br>
+                            Cash and Square <span class="fw-bold text-danger">NOT ACCEPTED</span> by vendors to purchase food and drinks.
+                        </p>
                     </div>
                 </div>
 
@@ -163,9 +183,11 @@
                 <h2>Upcoming Stops</h2>
             </div>
 
-            <div class="row g-3">
+            <div class="row g-3 justify-content-center">
                 <?php
+                $today = $today ?? date('Y-m-d');
                 $shown = 0;
+                $stops = $stops ?? [];
 
                 foreach ($stops as $stop):
                     if ($stop['end_date'] < $today) {
@@ -190,6 +212,10 @@
                                 ?>
                     <div class="col-md-6 col-lg-4">
                         <div class="schedule-card text-center h-100 d-flex flex-column justify-content-center">
+                        <?php if (ISSET($stop['change']) && $stop['change'] == 1): ?>
+                            <h4 class="fw-bold h4 w-100 text-center">** Schedule Change **</h4>
+                        <?php endif; ?>
+
                             <h3 class="schedule-location mb-1"><?= htmlspecialchars($stop['location']) ?></h3>
 
                             <p class="venue mb-1">

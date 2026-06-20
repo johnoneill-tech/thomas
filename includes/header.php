@@ -14,10 +14,10 @@
 <body>
 
 <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
 
-            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="/">
                 <img src="assets/images/thomas-logo1.png"
                      alt="Thomas Amusements Logo"
                      class="me-2 logo-img">
@@ -31,11 +31,11 @@
 
             <div class="collapse navbar-collapse" id="main_nav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?page=schedule">Schedule</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?page=rides">Rides</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?page=about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?page=contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/?page=schedule">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/?page=rides">Rides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/?page=about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/?page=contact">Contact</a></li>
                 </ul>
             </div>
 

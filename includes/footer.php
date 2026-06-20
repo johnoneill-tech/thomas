@@ -41,10 +41,10 @@
     </div>
 </footer>
 
-<?php if ($featured_stop || !empty($global_info['phone'])): ?>
+<?php if (!empty($featured_stop) || !empty($global_info['phone'])): ?>
 <div class="mobile-actions d-md-none">
 
-    <?php if ($featured_stop): ?>
+    <?php if (!empty($featured_stop)): ?>
         <a href="<?= htmlspecialchars(build_maps_url($featured_stop)) ?>"
            target="_blank"
            class="btn btn-primary flex-fill">

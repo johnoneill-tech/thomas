@@ -1,6 +1,6 @@
 <main>
 
-    <section class="page-hero py-1">
+    <section class="page-hero py-5">
         <div class="container text-center">
             <h1 class="mb-2">About Us</h1>
             <p class="lead mb-0">
@@ -60,30 +60,34 @@
                         </p>
 
                     </div>
-
+<?php
+$history = [
+    [
+        'header' => 'Since 1963',
+        'event' => 'Operating in Atlantic Canada.'
+    ],
+    [
+        'header' => 'Since 1983',
+        'event' => 'Exclusively operates in Newfoundland and Labrador.'
+    ],
+    [
+        'header' => 'Local Staff',
+        'event' => 'Seasonal employment across the province.'
+    ]
+];
+?>
                     <div class="row g-4 mt-4">
 
-                        <div class="col-md-4">
-                            <div class="info-card text-center">
-                                <h3>Since 1963</h3>
-                                <p class="mb-0">Operating in Atlantic Canada.</p>
-                            </div>
-                        </div>
+                    <?php foreach ($history as $item): ?>
 
                         <div class="col-md-4">
-                            <div class="info-card text-center">
-                                <h3>NL Since 1983</h3>
-                                <p class="mb-0">Focused on Newfoundland and Labrador.</p>
+                            <div class="info-card text-center h-100">
+                                <h3><?php echo $item['header']; ?></h3>
+                                <p class="mb-0"><?php echo $item['event']; ?></p>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="info-card text-center">
-                                <h3>Local Staff</h3>
-                                <p class="mb-0">Seasonal employment across the province.</p>
-                            </div>
-                        </div>
-
+                    <?php endforeach; ?>
+                    
                     </div>
 
                     <div class="text-center mt-4">

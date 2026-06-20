@@ -1,0 +1,109 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# -------------------------------------------------
+# Security filters FIRST (reduce bot/scanner noise)
+# -------------------------------------------------
+
+# Block noisy bots by UA (cheap, not perfect)
+RewriteCond %{HTTP_USER_AGENT} (AliyunSecBot|Bytespider|SemrushBot|MJ12bot|DotBot|AhrefsBot|BLEXBot|PetalBot) [NC]
+RewriteRule ^ - [F,L]
+
+# Block anything trying to call "index.php" under images/assets/scripts
+RewriteRule ^(?:images|assets|scripts)/.+/index\.php$ - [F,L]
+
+# Block injected/quoted URLs at the START of the request path (/%22http:/... or /"http:/...)
+RewriteCond %{REQUEST_URI} ^/(?:%22|").*(?:https?:|http:) [NC]
+RewriteRule ^ - [F,L]
+
+# Block injected/quoted URLs ANYWHERE in the path (covers /images/.../%22http:/... and /scripts/%22http:/...)
+RewriteRule .*%22https?:.* - [F,L,NC]
+RewriteRule .*%22http:.*  - [F,L,NC]
+RewriteRule .*"https?:.* - [F,L,NC]
+RewriteRule .*"http:.*  - [F,L,NC]
+
+# Block repetitive css/assets nesting like css/css/assets/assets/... (scanner signature)
+RewriteRule ^(?:.*(?:assets|css)/){4,} - [F,L]
+
+# Block "static file" requests that carry your app query params (page=, event_listing_id=, etc)
+RewriteCond %{REQUEST_URI} \.(?:css|js|png|jpg|jpeg|gif|svg|webp|ico)$ [NC]
+RewriteRule ^ - [F,L]
+
+# Block obvious fake ancient Internet Explorer
+RewriteCond %{HTTP_USER_AGENT} MSIE [NC]
+RewriteRule ^ - [F,L]
+
+# Block obvious old Opera variants
+RewriteCond %{HTTP_USER_AGENT} Opera/8 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Opera/9 [NC]
+RewriteRule ^ - [F,L]
+
+# Block very old Firefox versions
+RewriteCond %{HTTP_USER_AGENT} Firefox/1 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/2 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/3 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/4 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/5 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/6 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/7 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/8 [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/9 [NC]
+RewriteRule ^ - [F,L]
+
+# -------------------------------------------------
+# Redirect old host -> new host (keep this near top)
+# -------------------------------------------------
+# RewriteCond %{HTTP_HOST} ^thomas\.johnoneill\.tech$ [NC,OR]
+# RewriteCond %{HTTP_HOST} ^www\.wrestling\.johnny-o\.net$ [NC]
+# RewriteRule ^(.*)$ https://thomasamusements.ca/$1 [R=301,L,QSA]
+
+# -------------------------------------------------
+# WordPress front controller
+# -------------------------------------------------
+RewriteRule ^index\.php$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_flag display_errors Off
+   php_value max_execution_time 1440
+   php_value max_input_time 1440
+   php_value max_input_vars 1000
+   php_value memory_limit 512M
+   php_value post_max_size 516M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 512M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors Off
+   php_value max_execution_time 1440
+   php_value max_input_time 1440
+   php_value max_input_vars 1000
+   php_value memory_limit 512M
+   php_value post_max_size 516M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 512M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

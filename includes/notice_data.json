@@ -1,6 +1,7 @@
 {
-  "active": true,
-  "type": "info",
-  "message": "Delayed opening due to high winds, update at 4 PM.",
-  "updated": ""
+    "active": true,
+    "type": "closed",
+    "message": "Closed due to weather. We will reopen tomorrow @1pm.",
+    "notice_date": "2026-06-19",
+    "updated": "2026-06-19 16:51:23"
 }

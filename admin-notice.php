@@ -3,7 +3,7 @@
 date_default_timezone_set('Canada/Newfoundland');
 
 $notice_file = __DIR__ . '/includes/notice_data.json';
-$admin_password = 'change-this-password';
+$admin_password = 'Manager@TA';
 
 $error = '';
 $saved = false;
@@ -175,7 +175,12 @@ $today = date('Y-m-d');
 
         <div class="form-floating col-12 col-sm-12 my-1 px-1 d-flex flex-row align-items-center justify-content-center">
             <div class="form-check form-check-inline">
-                <input type="checkbox" class="btn-check" id="active" autocomplete="off" name="active" <?= !empty($notice['active']) ? 'checked' : '' ?>>
+                <input type="checkbox"
+                       class="btn-check"
+                       id="active"
+                       autocomplete="off"
+                       name="active" checked
+                       >
                 <label class="btn btn-outline-primary" for="active">Show Notice on Website</label>
             </div>
         </div>

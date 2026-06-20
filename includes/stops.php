@@ -32,10 +32,11 @@ $stops = [
         'end_date' => '2026-07-05',
     ],
     [
-        'location' => 'Springdale',
-        'venue' => 'Indian River High School',
-        'start_date' => '2026-07-09',
+        'location' => 'Clarenville',
+        'venue' => 'Clarenville Events Centre',
+        'start_date' => '2026-07-08',
         'end_date' => '2026-07-12',
+        'change' => 1
     ],
     [
         'location' => 'Deer Lake',
@@ -45,7 +46,7 @@ $stops = [
     ],
     [
         'location' => 'Stephenville',
-        'venue' => 'Kincourt',
+        'venue' => 'Kin Court',
         'start_date' => '2026-07-22',
         'end_date' => '2026-07-26',
     ],
@@ -74,20 +75,21 @@ $stops = [
         'end_date' => '2026-08-23',
     ],
     [
-        'location' => 'Grand Falls',
-        'venue' => 'Centennial Field',
+        'location' => 'Grand Falls-Windsor',
+        'venue' => 'Shanawdithit Centennial Park',
         'start_date' => '2026-08-26',
         'end_date' => '2026-08-30',
     ],
     [
-        'location' => 'Clarenville',
-        'venue' => 'Eastlink Events Centre',
+        'location' => 'TBA',
+        'venue' => 'TBA',
         'start_date' => '2026-09-02',
         'end_date' => '2026-09-06',
+        'change' => 1
     ],
     [
         'location' => 'Harbour Grace',
-        'venue' => 'Danny Cleary Arena',
+        'venue' => 'Danny Cleary Community Centre',
         'start_date' => '2026-09-09',
         'end_date' => '2026-09-13',
     ],

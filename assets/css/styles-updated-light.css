@@ -1,0 +1,633 @@
+/* ================================
+   Base / Theme
+================================ */
+
+:root {
+    --ta-yellow: #E3D94C;
+    --ta-orange: #F2A640;
+    --ta-red: #C51D2D;
+
+    --ta-dark: #f8f9fa;
+    --ta-dark-2: #eef1f4;
+    --ta-card: #ffffff;
+    --ta-card-soft: #f6f7f9;
+
+    --ta-text: #212529;
+    --ta-muted: #6c757d;
+
+    --ta-border: rgba(0, 0, 0, 0.08);
+    --ta-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin: 0;
+}
+main {
+  flex: 1; /* This pushes the footer to the bottom */
+}
+
+
+body {
+    background-color: var(--ta-dark);
+    color: var(--ta-text);
+    font-family: Arial, sans-serif;
+    padding-bottom: 110px;
+}
+
+a {
+    color: var(--ta-orange);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--ta-yellow);
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--ta-yellow);
+}
+
+.text-muted {
+    color: var(--ta-muted) !important;
+}
+
+
+/* ================================
+   Bootstrap Button Theme
+================================ */
+
+.btn-primary {
+    background-color: var(--ta-red);
+    border-color: var(--ta-red);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #A81826;
+    border-color: #A81826;
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.75);
+    color: #fff;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    background-color: var(--ta-orange);
+    border-color: var(--ta-orange);
+    color: #000;
+}
+
+.btn-success {
+    background-color: #1F7A3A;
+    border-color: #1F7A3A;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #17612D;
+    border-color: #17612D;
+}
+
+
+/* ================================
+   Header / Navbar
+================================ */
+
+.site-header {
+    z-index: 1050;
+    backdrop-filter: blur(6px);
+}
+
+.navbar {
+    background-color: var(--ta-dark-2) !important;
+    border-bottom: 2px solid var(--ta-red);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo-img {
+    height: 64px;
+    width: auto;
+}
+
+/* Header / Navbar (light theme) */
+
+.navbar {
+    background: var(--ta-card);
+    border-bottom: 1px solid var(--ta-border);
+}
+
+/* Brand */
+.navbar-brand {
+    color: var(--ta-text) !important;
+}
+
+/* Links */
+.navbar-nav .nav-link {
+    color: var(--ta-text);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--ta-red);
+}
+
+/* Active link (optional) */
+.navbar-nav .nav-link.active {
+    color: var(--ta-red);
+    font-weight: 600;
+}
+
+/* Mobile toggle icon fix */
+.navbar-toggler {
+    border-color: var(--ta-border);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* ensures visibility if needed */
+}
+
+
+/* ================================
+   Notice Banner
+================================ */
+
+.site-notice {
+    padding: 12px 18px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.site-notice-info {
+    background: var(--ta-orange);
+    color: #000;
+}
+
+.site-notice-warning {
+    background: var(--ta-yellow);
+    color: #000;
+}
+
+.site-notice-closed {
+    background: var(--ta-red);
+    color: #fff;
+}
+
+
+/* ================================
+   Shared Sections
+================================ */
+
+.hero-section,
+.page-hero {
+//     background: linear-gradient(180deg, var(--ta-card-soft) 0%, var(--ta-dark) 100%);
+    background: var(--ta-dark-2);
+}
+
+.page-hero {
+    border-bottom: 1px solid rgba(242, 166, 64, 0.25);
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--ta-muted);
+}
+
+.hero-kicker {
+    color: var(--ta-orange);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.page-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.section-heading p,
+.lead {
+    color: var(--ta-muted);
+}
+
+
+/* ================================
+   Cards
+================================ */
+
+.featured-stop-card,
+.info-card,
+.schedule-card,
+.faq-card,
+.current-schedule-card,
+.ride-card,
+.about-card {
+    background: var(--ta-card);
+    border-radius: 14px;
+    box-shadow: var(--ta-shadow);
+}
+
+.featured-stop-card,
+.info-card,
+.schedule-card,
+.faq-card,
+.current-schedule-card,
+.about-card {
+    padding: 20px;
+}
+
+.info-card,
+.schedule-card,
+.faq-card,
+.ride-card,
+.about-card {
+    border-top: 3px solid var(--ta-orange);
+}
+
+.featured-stop-card {
+    background: rgba(35, 26, 20, 0.92);
+    border-top: 3px solid var(--ta-yellow);
+    backdrop-filter: blur(6px);
+}
+
+.current-schedule-card {
+    border: 2px solid var(--ta-yellow);
+}
+
+.venue,
+.schedule-row .venue,
+.featured-stop-card .venue,
+.current-schedule-card .venue {
+    color: var(--ta-muted);
+}
+
+.dates {
+    color: var(--ta-yellow);
+    font-weight: 700;
+}
+
+.stop-status {
+    color: var(--ta-orange);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* ================================
+   Hero Background Image
+================================ */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/assets/images/NightShotInGander.jpg') center center / cover no-repeat;
+    z-index: 1;
+    transform: scale(1.05);
+    animation: heroSlowZoom 18s ease-in-out infinite alternate;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(255,255,255,0.35)
+//     background:
+//         linear-gradient(to top, rgba(197, 29, 45, 0.28), transparent),
+//         rgba(0, 0, 0, 0.66);
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-kicker {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes heroSlowZoom {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+
+/* ================================
+   Featured / Upcoming Stop Cards
+================================ */
+
+.schedule-card {
+    text-align: center;
+    padding: 22px;
+    height: 100%;
+}
+
+.schedule-location,
+.featured-stop-card .location {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.schedule-card .venue,
+.featured-stop-card .venue {
+    font-size: 1.15rem;
+}
+
+.schedule-card .dates,
+.featured-stop-card .dates {
+    font-size: 1.15rem;
+}
+
+
+/* ================================
+   Schedule Page
+================================ */
+
+.schedule-list {
+    display: grid;
+    gap: 12px;
+}
+
+.schedule-row {
+    background: var(--ta-card);
+    border-radius: 12px;
+    padding: 18px;
+    border-left: 5px solid var(--ta-border);
+    box-shadow: var(--ta-shadow);
+}
+
+.schedule-row-active {
+    border-left-color: var(--ta-yellow);
+    background: ff9e6\;
+}
+
+.schedule-row-past {
+    opacity: 0.55;
+}
+
+.schedule-row h3 {
+    font-size: 1.25rem;
+}
+
+.schedule-date {
+    color: var(--ta-yellow);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.schedule-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.schedule-badge-active {
+    background: var(--ta-yellow);
+    color: #000;
+}
+
+.schedule-badge-upcoming {
+    background: var(--ta-orange);
+    color: #000;
+}
+
+.schedule-badge-past {
+    background: #4B4038;
+    color: var(--ta-muted);
+}
+
+
+/* ================================
+   Rides Page
+================================ */
+
+.ride-card {
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ride-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+
+.ride-image-wrap {
+    background: var(--ta-card-soft);
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.ride-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.ride-card:hover .ride-image {
+    transform: scale(1.05);
+}
+
+.ride-card-body {
+    padding: 18px;
+}
+
+.ride-type {
+    color: var(--ta-orange);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ride-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+
+/* ================================
+   Home Preview Images
+================================ */
+
+.placeholder-image,
+.rides-preview-image-wrap {
+    background: var(--ta-card-soft);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.placeholder-image {
+    height: 220px;
+    color: var(--ta-muted);
+}
+
+.rides-preview-image {
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.rides-preview-image-wrap:hover .rides-preview-image {
+    transform: scale(1.04);
+}
+
+
+/* ================================
+   Payment / Admin Helpers
+================================ */
+
+.payment-logo-lg {
+    height: 28px;
+}
+
+.masked-password {
+    -webkit-text-security: disc;
+    text-security: disc;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+.site-footer {
+    background: var(--ta-dark-2);
+    color: var(--ta-muted);
+    border-top: 2px solid var(--ta-red);
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+.site-footer .small a {
+    color: var(--ta-muted);
+}
+
+.site-footer .small a:hover {
+    color: #fff;
+}
+
+
+/* ================================
+   Mobile Action Bar
+================================ */
+
+.mobile-actions {
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+    transform: translateY(0);
+
+    z-index: 1100;
+
+    display: flex;
+    gap: 6px;
+
+    padding: 8px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+
+    /* background: #000; */
+    background: red;
+    border-top: 1px solid #333;
+}
+
+.mobile-actions .btn {
+    font-size: 0.9rem;
+    padding: 10px 6px;
+}
+
+
+/* ================================
+   Responsive Tweaks
+================================ */
+
+@media (min-width: 992px) {
+    .schedule-location,
+    .featured-stop-card .location {
+        font-size: 2rem;
+    }
+
+    .schedule-card .dates,
+    .featured-stop-card .dates {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+    }
+
+    .hero-bg {
+        animation: none;
+        transform: scale(1.03);
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .schedule-row {
+        padding: 15px;
+    }
+
+    .schedule-date {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        height: 32px;
+    }
+
+    .navbar-brand span {
+        font-size: 0.95rem;
+    }
+}
+
+@supports (height: 100dvh) {
+    body {
+        min-height: 100dvh;
+    }
+}
